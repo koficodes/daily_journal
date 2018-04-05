@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <form action="{% url 'delete-journal' journal.pk %}" method="POST">
+        {% csrf_token %}
+        <p>Are you sure you want to delete "{{ journal.title }}"?</p>
+        <a href="{% url 'list-journals'  %}"> &lt; &lt; back</a>
+        <input type="submit" value="Confirm" />
+    </form>
+</body>
+
+</html>
